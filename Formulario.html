@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Klee+One&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="HLC_T3_styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <!-- Contenido de la página -->
+<div class="form">
+    <form id="formulario" onsubmit="mostrarDatos(event)">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" required minlength="3" maxlength="50" autocomplete="on" placeholder="Ingresa tu nombre" required><br><br>
+    
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" id="correo" required minlength="6" maxlength="20" autocomplete="on" placeholder="Ingresa tu correo" required><br><br>
+    
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" required minlength="6" maxlength="20" autocomplete="off" placeholder="Escribe tu mensaje aquí" required><br><br>
+        <button onclick="if (confirm('¿Estas seguro que quieres enviarlo?')) {mostrarDatos(event)} else {document.getElementById('pedidoForm').reset()}">Enviar</button>
+</div>
+<div class="header">
+  <div class="botones" >
+    <div class="container">
+      <div class="box">
+    <a href="practica_evaluable_1.html" id="btn1">Inicio</a>
+  </div>
+    <div class="box">
+    <a href="Información.html" id="btn2">Información</a>
+  </div>
+  <div class="box">
+    <a href="Formulario.html" id="btn3">Formulario</a>
+  </div>
+  
+  </div>
+</div>
+
+
+</div>
+
+<div class="container">
+
+</div>
+  <!-- Fin contenido de la página -->
+
+  <script>
+    function showTabById(tabId) {
+      const tabs = document.querySelectorAll('.tab');
+      tabs.forEach(tab => {
+        tab.classList.toggle('active', tab.id === tabId);
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const buttons = document.querySelectorAll('.menu button');
+      buttons.forEach(button => {
+        button.addEventListener('click', () => {
+          const tabId = button.id.replace('btn', 'tab');
+          showTabById(tabId);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
